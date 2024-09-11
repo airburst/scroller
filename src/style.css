@@ -13,6 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   --question-count: 6;
+  --animate-duration: 1s;
+  --animate-delay: 0.5s;
 }
 
 a {
@@ -74,16 +76,13 @@ h1 {
   height: 200px;
   margin: auto;
   opacity: 0;
-  transition: all 2s ease-in-out;
+  transition: all var(--animate-duration) ease-in-out;
+  transition-delay: var(--animate-delay);
 }
 
 .question.active {
   opacity: 1;
 }
-
-/* #q3 {
-  height: 400px;
-} */
 
 .action-buttons {
   display: flex;

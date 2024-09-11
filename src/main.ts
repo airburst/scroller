@@ -17,27 +17,25 @@ const setActiveQuestion = (index: number) => {
 
 const nextQuestion = () => {
   const scroller = document.querySelector<HTMLDivElement>(".q-scroller")!;
+
   currentQuestion += 1;
   if (currentQuestion > questionCount - 1) {
     currentQuestion = questionCount - 1;
   }
 
-  const delta = currentQuestion * 100;
-
-  scroller.style.transform = `translateX(-${delta}vw)`;
+  scroller.style.transform = `translateX(-${currentQuestion * 100}vw)`;
   setActiveQuestion(currentQuestion);
 };
 
 const prevQuestion = () => {
   const scroller = document.querySelector<HTMLDivElement>(".q-scroller")!;
+
   currentQuestion -= 1;
   if (currentQuestion < 0) {
     currentQuestion = 0;
   }
 
-  const delta = currentQuestion * 100;
-
-  scroller.style.transform = `translateX(-${delta}vw)`;
+  scroller.style.transform = `translateX(-${currentQuestion * 100}vw)`;
   setActiveQuestion(currentQuestion);
 };
 
